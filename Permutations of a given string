@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+    char str1[100],cpy[100],temp;
+    int len,i=0,j,a=0;
+    scanf("%s",str1);
+     printf("\n");
+    for(len=0;str1[len]!='\0';len++);
+    
+    while(a<len)
+    {
+    while(str1[len-1]!=str1[i]){
+    temp=str1[i+1];
+    str1[i+1]=str1[i];
+    str1[i]=temp;
+    for(int k=0;k<len;k++)
+    {
+    printf("%c",str1[k]);
+    }
+    printf("\n");
+    i++;
+    }
+    i=0;
+    a++;
+    }
+}
