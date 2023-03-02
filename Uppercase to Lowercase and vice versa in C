@@ -1,0 +1,29 @@
+/*
+Converting Upper case to Lower Case and Vice Versa in C
+Input: ABCdEfg
+Output: abcDeFG
+*/
+
+#include<stdio.h>
+int main()
+{
+    char str[50];
+    scanf("%s",str);
+    int len;
+    for(len=0;str[len]!='\0';len++);
+    for(int i=0;i<len;i++)
+    {
+        if(str[i]>=65 && str[i]<=90)
+        {
+            str[i]=str[i]+32;
+        }
+        else if(str[i]>=97 && str[i]<=122)
+        {
+            str[i]=str[i]-32;
+        }
+    }
+    for(int i=0;i<len;i++)
+    {
+        printf("%c",str[i]);
+    }
+}
