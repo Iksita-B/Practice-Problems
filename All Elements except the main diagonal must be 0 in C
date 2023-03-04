@@ -1,0 +1,64 @@
+/*
+Input: 3 3
+1 0 0
+0 2 0
+0 0 3
+Output: True
+
+Input: 3 3
+1 0 1
+0 3 0
+1 1 0
+Output: False
+*/
+#include<stdio.h>
+int main()
+{
+    int s1,s2,flag=0;
+    scanf("%d %d",&s1,&s2);
+    int arr[s1][s2];
+    for(int i=0;i<s1;i++)
+    {
+        for(int j=0;j<s2;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(int i=0;i<s1;i++)
+    {
+        for(int j=0;j<s2;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    for(int i=0;i<s1;i++)
+    {
+        for(int j=0;j<s2;j++)
+        {
+            
+            if(i==j)
+            {
+                if(arr[i][j]==0)
+                {
+                    flag++;
+                }
+            }
+            if(i!=j)
+            {
+                if(arr[i][j]!=0)
+                {
+                    flag++;
+                }
+            }
+        }
+    }
+    if(flag==0)
+    {
+        printf("True");
+    }
+    else
+    {
+        printf("False");
+    }
+}
