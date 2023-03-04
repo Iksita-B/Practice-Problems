@@ -6,7 +6,7 @@ Output: 1
 #include<stdio.h>
 int main()
 {
-    int num,Number;
+    int num;
     scanf("%d",&num);
     int last,last2;
     last=num%10;
