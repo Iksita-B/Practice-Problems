@@ -1,0 +1,81 @@
+/*
+SNAKE PATTERN PROBLEM WITHOUT USING ARRAYS
+Input: 4
+Output:
+   1 2 3 4
+  8 7 6 5
+ 9 10 11 12
+16 15 14 13
+
+ALGORITHM:
+1) Get the value from the user
+2) Print the first line of spaces and numbers
+3) Code to print the lines backward and forward, alternatively.
+    i) If the line number is even, print the numbers backward.
+    ii) If the line number is odd, print the numbers forward.
+4) For each line printing, print the preceding spaces.
+
+*/
+#include <stdio.h>
+int main()
+{
+    
+    int input,num=0;
+    scanf("%d",&input);
+    int spc=input-1;
+    //printing spaces for the begining of the line
+    for(int i=0;i<spc;i++)
+    {
+        printf(" ");
+    }
+    spc--;
+    //printing the first line
+    for(int i=0;i<input;i++)
+    {
+        num++;
+        printf("%d ",num); //4
+        
+    }
+    printf("\n");
+    //printing of values from the second line
+    for(int j=2;j<=input;j++)
+    {
+        //to print the numbers backward
+        if(j%2==0)
+        {
+            num=num+input+1; 
+            //printing spaces
+            for(int i=0;i<spc;i++)
+            {
+                printf(" ");
+            }
+            for(int i=0;i<input;i++)
+            {
+                num--; 
+                printf("%d ",num); 
+                
+            }
+            spc--;
+            printf("\n");
+        }
+        //to print the numbers forward
+        else
+        {
+            num=num+input-1; 
+            //printing spaces
+            for(int i=0;i<spc;i++)
+            {
+                printf(" ");
+            }
+            for(int i=0;i<input;i++)
+            {
+                num++;
+                printf("%d ",num);
+                
+            }
+            spc--;
+            printf("\n");
+        }
+    }
+    
+}
