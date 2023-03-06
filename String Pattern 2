@@ -1,0 +1,63 @@
+/*
+Input: PROGRAM
+Output:
+      G
+     GR
+    GRA
+   GRAM
+  GRAMP
+ GRAMPR
+GRAMPRO
+*/
+#include<stdio.h>
+int main()
+{
+    //geting input from the user
+    char input[100];
+    scanf("%s",input);
+    int len;
+    //finding the length of the string
+    for(len=0;input[len]!='\0';len++);
+    //finding the mid value of the string and initializing value for spacing as length-1
+    int mid=len/2,spc=len-1;
+    //initializing iterative variables and setting a pointer to keep track of repetitive printing
+    int i,j,ptr=mid;
+    //for loop for printing from mid to last element
+    for(ptr=mid;ptr<len;ptr++)
+    {
+        for(int i=0;i<spc;i++)
+        {
+            printf(" ");
+        }
+        for(i=mid;i<=ptr;i++)
+        {
+            printf("%c",input[i]);
+            
+        }
+        if(ptr!=len-1)
+        {
+            printf("\n");
+        }
+        spc--;
+        
+    }
+    printf("\n");
+    //for loop for printing from 0 to mid-1
+    for(ptr=0;ptr<mid;ptr++)
+    {
+        for(int i=0;i<spc;i++)
+        {
+            printf(" ");
+        }
+        for(i=mid;i<len;i++)
+        {
+            printf("%c",input[i]);
+        }
+        for(j=0;j<=ptr;j++)
+        {
+            printf("%c",input[j]);
+        }printf("\n");spc--;
+    }
+    
+   
+}
